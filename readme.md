@@ -1,6 +1,6 @@
 # Heroku Binary Buildpack
 
-Use it if you need Heroku to execute a binary.
+Use it if you need Heroku to execute a binary. APP is the name of your heroku app. For some commands you need to append "-a APP" or change the directory to the local folder of your app with "cd /path/to/folder".
 
 ## Usage
 
@@ -41,6 +41,13 @@ $ git push heroku master
 $ heroku run program
 Running `program` attached to terminal... up, run.8663
 hello world
+```
+
+You could also add this buildpack to an exesting heroku app:
+```bash
+$ heroku config:set BUILDPACK_URL=https://github.com/Ph3nx/heroku-binary-buildpack.git -a APP
+Setting config vars and restarting cmds... done, v3
+BUILDPACK_URL: https://github.com/Ph3nx/heroku-binary-buildpack.git
 ```
 
 
